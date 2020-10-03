@@ -194,11 +194,24 @@ function FlappyBird(){
             passaro.animar()
             if (colidiu(passaro, barreiras)){
                 clearInterval(temporizador)
+                
+
+                retry.style.display = "block"
+                retry.innerHTML = `PONTOS<br>
+                                    ${pontos}`
+    
+                setTimeout(() => {
+                    window.location.reload()
+                }, 3000)
+                
             }
             x = x+1
             if (x>30){
                 x = 0
             }
+            
+
+
         },20)
     }
 
